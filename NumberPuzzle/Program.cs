@@ -15,11 +15,13 @@ namespace NumberPuzzle
 			}
 
 			Console.WriteLine(new NumberToWordConverter().Convert(argsParser.NumericValue()));
+			Console.ReadLine();
 		}
 
 		private static void Usage()
 		{
-			Console.WriteLine("{0} <number>", Assembly.GetExecutingAssembly().GetName().Name);
+			Console.WriteLine("Please specify a number on the command line.\r\n\r\nUsage: {0} <number>", Assembly.GetExecutingAssembly().GetName().Name);
+			Console.ReadLine();
 		}
 	}
 }

@@ -29,6 +29,29 @@ namespace NumberPuzzle.Strategies
 			return DescribeNumber(@group.Digit);
 		}
 
+		protected string Teen(HundredGroup @group)
+		{
+			if (IsInTeenRange(@group))
+			{
+				return DescribeNumber((@group.Tens * 10) + @group.Digit);
+			}
+			else
+			{
+				return
+					Concatenate(new Func<HundredGroup, string>[]
+					            	{
+					            		Tens,
+					            		Digit
+					            	}.Select(x => x(@group)));
+			}
+		}
+
+		private bool IsInTeenRange(HundredGroup @group)
+		{
+			var sum = (@group.Tens*10) + @group.Digit;
+			return sum > 10 && sum < 20;
+		}
+
 		protected string Tens(HundredGroup @group)
 		{
 			return DescribeNumber(@group.Tens * 10);

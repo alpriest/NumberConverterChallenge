@@ -1,7 +1,6 @@
 using System;
-using NumberPuzzle.Strategies;
 
-namespace NumberPuzzle
+namespace NumberPuzzle.Strategies
 {
 	public class TensAndDigitDescribingStrategy : BaseDescribingStrategy
 	{
@@ -9,8 +8,7 @@ namespace NumberPuzzle
 		{
 			base.NumberParts = new Func<HundredGroup, string>[]
 			                   	{
-			                   		Tens,
-			                   		Digit
+			                   		Teen
 			                   	};
 		}
 	}

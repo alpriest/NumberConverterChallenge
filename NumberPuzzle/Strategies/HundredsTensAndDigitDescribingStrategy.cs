@@ -10,8 +10,7 @@ namespace NumberPuzzle.Strategies
 			                                     	{
 														Hundreds,
 			                                     		Conjunction,
-			                                     		Tens,
-			                                     		Digit
+			                                     		Teen
 			                                     	};
 		}
 	}

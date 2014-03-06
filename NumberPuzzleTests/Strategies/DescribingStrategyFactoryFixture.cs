@@ -9,7 +9,7 @@ namespace NumberPuzzleTests
 	public class DescribingStrategyFactoryFixture
 	{
 		[TestCase(100, typeof(HundredsDescribingStrategy))]
-		[TestCase(12, typeof(TensAndDigitDescribingStrategy))]
+		[TestCase(56, typeof(TensAndDigitDescribingStrategy))]
 		[TestCase(123, typeof(HundredsTensAndDigitDescribingStrategy))]
 		public void ReturnsCorrectStrategy(int number, Type expected)
 		{

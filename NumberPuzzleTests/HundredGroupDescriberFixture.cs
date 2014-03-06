@@ -8,6 +8,7 @@ namespace NumberPuzzleTests
 	{
 		[TestCase(1, "one", Description = "Value has only units")]
 		[TestCase(10, "ten", Description = "Value has only tens")]
+		[TestCase(13, "thirteen", Description = "Value has special case of teen")]
 		[TestCase(100, "one hundred", Description = "Value has only hundreds")]
 		[TestCase(45, "forty five", Description = "Value has only tens and units")]
 		[TestCase(450, "four hundred and fifty", Description = "Value has only hundreds and tens")]

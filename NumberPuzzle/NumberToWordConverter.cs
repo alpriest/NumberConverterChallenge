@@ -24,8 +24,19 @@ namespace NumberPuzzle
 			var numberGroups = SplitNumberIntoWeightedHundredGroups(number);
 
 			return numberGroups
-				.Aggregate(string.Empty, (s, @group) => s + groupDescriber.Describe(@group) + " ")
+				.Aggregate(string.Empty, (s, @group) => AppendNumberDescription(@group, s))
 				.Trim();
+		}
+
+		private string AppendNumberDescription(WeightedHundredGroup @group, string s)
+		{
+			var description = groupDescriber.Describe(@group);
+			return s + description + Appendage(description);
+		}
+
+		private static string Appendage(string description)
+		{
+			return string.IsNullOrEmpty(description) ? string.Empty : " ";
 		}
 
 		private IEnumerable<WeightedHundredGroup> SplitNumberIntoWeightedHundredGroups(int number)
